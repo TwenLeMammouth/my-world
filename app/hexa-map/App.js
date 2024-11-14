@@ -34,7 +34,7 @@ function MyScene() {
     <Suspense fallback={null}>
       <Environment background={"only"} files={"./textures/bg.hdr"} />
       {/* <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} /> */}
-      // 
+      
       <PerspectiveCamera makeDefault fov={50} position={[-60, 50, 60]} />
       
       <pointLight color={lightColor} position={[40, 30, 40]} />
