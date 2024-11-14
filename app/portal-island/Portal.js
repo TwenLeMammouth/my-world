@@ -1,8 +1,11 @@
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useEffect } from "react";
-import { AlwaysStencilFunc, DoubleSide, EquirectangularReflectionMapping, LinearEncoding, LinearSRGBColorSpace, ReplaceStencilOp, Scene, TextureLoader, WebGLRenderTarget } from "three";
+import { AlwaysStencilFunc, DoubleSide, EquirectangularReflectionMapping, LinearEncoding, LinearSRGBColorSpace, ReplaceStencilOp, Scene, WebGLRenderTarget } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { FillQuad } from "./FillQuad";
+import dynamic from 'next/dynamic';
+
+const TextureLoader = dynamic(() => import('three'), { ssr: false });
 
 const scene = new Scene();
 scene.background = new TextureLoader().load("textures/galaxy.jpg",
